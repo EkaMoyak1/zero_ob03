@@ -54,6 +54,9 @@ class Mammal(Animal):
         else:
             print(f'{self.name} убегает от хищника')
 
+    def walk(self):
+        print(f'{self.name} ходит')
+
 
 class Reptile(Animal):
     def __init__(self, name: str, age: int, kind: str):
