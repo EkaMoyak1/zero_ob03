@@ -26,7 +26,7 @@ class Bird(Animal):
         if self.ability_to_sing:
             print(f'{self.name} красиво поет')
         else:
-            print(f'{self.name} кряхтит')
+            print(f'{self.name} Чик-чирик')
 
     def fly(self):
         if self.is_fly:
