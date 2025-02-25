@@ -93,10 +93,12 @@ class Zoo:
         self.animals = []
         self.employees = []
 
-    def add_animal(self, animal: Animal):
+    def add_animal(self, class_name, parameters):
+        animal = class_name(*parameters)
         self.animals.append(animal)
 
-    def add_employee(self, employee: Employee):
+    def add_employee(self, class_name, name, age):
+        employee = class_name(name, age)
         self.employees.append(employee)
 
     def animal_sounds(self):
@@ -119,13 +121,13 @@ if __name__ == "__main__":
     my_zoo = Zoo("Дикий мир", "ул. Зоологическая, 1")
 
     # Добавление животных
-    my_zoo.add_animal(Bird("Кеша", 2, "Попугай", ability_to_sing=True))
-    my_zoo.add_animal(Mammal("Барсик", 5, "Тигр", dangerous=True))
-    my_zoo.add_animal(Reptile("Гена", 10, "Крокодил"))
+    my_zoo.add_animal(Bird,{'name':"Кеша", 'age': 2, 'kind': "Попугай",  'ability_to_sing':True})
+    my_zoo.add_animal(Mammal,{"name":"Барсик", 'age':5, 'kind': "Тигр", 'dangerous':True})
+    my_zoo.add_animal(Reptile,{"name":"Гена", 'age':10, "kind": "Крокодил"})
 
     # Добавление сотрудников
-    my_zoo.add_employee(ZooKeeper("Иван Петров", 35))
-    my_zoo.add_employee(Veterinarian("Мария Иванова", 28))
+    my_zoo.add_employee(ZooKeeper, "Иван Иванов", 30)
+    my_zoo.add_employee(Veterinarian,"Мария Иванова", 28)
 
     # Демонстрация полиморфизма
     print("\nЗвуки животных:")
