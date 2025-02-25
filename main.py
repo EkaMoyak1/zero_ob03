@@ -62,6 +62,9 @@ class Reptile(Animal):
     def make_sound(self):
         print(f'{self.name} шипит')
 
+    def crawl(self):
+        print(f'{self.name} крадется')
+
 
 class Employee:
     def __init__(self, name: str, age: int):
